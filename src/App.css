@@ -1,4 +1,5 @@
-.App {
+.app {
   display: flex;
   text-align: center;
+  flex-direction: column;
 }

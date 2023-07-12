@@ -1,4 +1,5 @@
 import { gql, useQuery } from "@apollo/client";
+import "./App.css";
 
 type Users = {
   id: string;
@@ -24,17 +25,15 @@ export default function App() {
   console.log(data);
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>All users</h1>
-      <div>
-        {data?.users.map((users) => (
-          <div key={users.id}>
-            {users.username}
-            <div>create at :{users.created_at}</div>
-            <div>update at :{users.updated_at}</div>
-          </div>
-        ))}
-      </div>
+      {data?.users.map((users) => (
+        <div key={users.id}>
+          {users.username}
+          <div>create at :{users.created_at}</div>
+          <div>update at :{users.updated_at}</div>
+        </div>
+      ))}
     </div>
   );
 }

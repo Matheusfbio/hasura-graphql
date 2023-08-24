@@ -2,18 +2,18 @@ import { useMutation } from "@apollo/client";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { ADD_USER } from "../mutations/Mutation";
-import { GET_USER } from "../queries/Query";
+import { ADD_TASK } from "../mutations/Mutation";
+import { GET_TASK } from "../queries/Query";
 
-type Users = {
-  username: string;
+type Tasks = {
+  task: string;
 };
 
 export default function Forms() {
-  const [username, setUsername] = useState<string>("");
-  const { register } = useForm<Users>();
-  const [insert_users] = useMutation(ADD_USER, {
-    refetchQueries: [{ query: GET_USER }],
+  const [task, setTask] = useState<string>("");
+  const { register } = useForm<Tasks>();
+  const [insert_tasks] = useMutation(ADD_TASK, {
+    refetchQueries: [{ query: GET_TASK }],
   });
 
   const navigate = useNavigate();
@@ -28,32 +28,34 @@ export default function Forms() {
         className="flex flex-col text-center"
         onSubmit={(e) => {
           e.preventDefault();
-          insert_users({
-            variables: { username: username },
+          insert_tasks({
+            variables: { task: task },
           });
         }}
       >
-        <label>Username</label>
+        <label>Tarefas</label>
         <input
           className=" shadow-inner  text-center hover:shadow-lg rounded-lg"
-          {...register("username")}
-          id="username"
-          value={username}
+          {...register("task")}
+          id="task"
+          value={task}
           onChange={(e) => {
-            setUsername(e.target.value);
+            setTask(e.target.value);
           }}
         />
         <button
           className="flex-1 visible items-center bg-blue-600 hover:bg-green-600 m-5"
           onClick={userNotification}
+          type="submit"
         >
           enviar
         </button>
         <button
           className="flex-1 visible bg-blue-600 hover:bg-green-600 p-1"
           onClick={() => navigate("/")}
+          type="button"
         >
-          Voltar para tela de lista de usuarios
+          Voltar para tela de lista de tarefas
         </button>
       </form>
     </div>

@@ -10,3 +10,14 @@ export const GET_USER = gql`
     }
   }
 `;
+
+export const GET_TASK = gql`
+  query ShowTasks {
+    tasks {
+      id
+      task
+      created_at
+      updated_at
+    }
+  }
+`;

@@ -1,18 +1,18 @@
 import { gql } from "@apollo/client";
 
-export const ADD_USER = gql`
-  mutation createUser($username: String!) {
-    insert_users(objects: { username: $username }) {
+export const ADD_TASK = gql`
+  mutation createTask($task: String!) {
+    insert_tasks(objects: { task: $task }) {
       returning {
-        username
+        task
       }
     }
   }
 `;
 
-export const DELETE_USER = gql`
-  mutation DeleteUser($username: String!) {
-    delete_users(where: { username: { _eq: $username } }) {
+export const DELETE_TASK = gql`
+  mutation DeleteTasks($task: String!) {
+    delete_tasks(where: { task: { _eq: $task } }) {
       affected_rows
     }
   }

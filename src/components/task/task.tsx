@@ -31,6 +31,12 @@ export default function Tasks() {
 
   return (
     <div className="flex flex-col items-center text-center">
+      <button
+        className="flex-1 bg-blue-600 hover:bg-green-700 p-2 w-80 justify-items-center"
+        onClick={() => navigate("/")}
+      >
+        logout
+      </button>
       <h1 className="py-8">All tasks</h1>
       {data?.tasks.map((tasks) => (
         <div className="flex ml-36">

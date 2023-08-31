@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar/NavBar";
 
 export default function HomeScreen() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <>
       <NavBar />
@@ -10,12 +10,12 @@ export default function HomeScreen() {
         <h1 className="text-4xl">Welcome the home Page</h1>
       </div>
       <div className="flex justify-center items-center py-80">
-        <button
+        {/* <button
           className="bg-blue-600 hover:bg-green-700 p-10"
           onClick={() => navigate("/tasks")}
         >
           Login
-        </button>
+        </button> */}
       </div>
     </>
   );

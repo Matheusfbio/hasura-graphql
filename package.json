@@ -24,6 +24,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.1",
     "react-icons": "^4.10.1",
+    "react-keycloak": "^8.0.1-191210",
     "react-router-dom": "^6.15.0"
   },
   "devDependencies": {

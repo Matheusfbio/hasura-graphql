@@ -1,10 +1,20 @@
-import { useKeycloak } from "@react-keycloak/web";
+// import { useEffect } from "react";
+// import keycloak from "../../keycloakConfig"; // Importe o arquivo de configuração
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function PrivateRoute(props: any) {
-  const { keycloak } = useKeycloak();
+// const ProtectedComponent = () => {
+//   useEffect(() => {
+//     keycloak.init({ onLoad: "login-required" }).then((authenticated) => {
+//       if (authenticated) {
+//         console.log("Usuário autenticado");
+//       }
+//     });
+//   }, []);
 
-  const isLoggedIn = keycloak.authenticated;
+//   return (
+//     <div>
+//       <h1>Secured page</h1>
+//     </div>
+//   );
+// };
 
-  return isLoggedIn ? props : null;
-}
+// export default ProtectedComponent;
